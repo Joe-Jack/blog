@@ -1,0 +1,22 @@
+<h3>
+    編集してください
+</h3>
+
+<%= form_for @vlog, :url => {:action => 'update'} do |f| %>
+  
+  <div class="field">
+  <%= f.label :name, "名前" %><br>
+  <%= f.text_field :name, placeholder: '山田太郎' %>
+  </div>
+  <div class="content">
+  <%= f.label :text, "内容" %><br>
+  <%= f.text_area :text, placeholder: 'コメント' %>
+  </div>
+  <div class="actions">
+  <%= f.submit "送信する" %>
+  </div>
+<% end %>
+
+
+
+

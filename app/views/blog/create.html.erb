@@ -1,0 +1,12 @@
+<h3>
+    送信しました
+</h3>
+
+<p>
+  <strong>Text:</strong>
+  <%= @vlog.text %>
+</p>
+
+<%= link_to '訂正する', "/blog/#{@vlog.id}/edit", method: :get %> |
+<%= link_to '削除する', "/blog/#{@vlog.id}", method: :delete %> |
+<%= link_to 'フォームに戻る', blog_index_path %>
