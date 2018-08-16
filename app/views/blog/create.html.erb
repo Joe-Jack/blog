@@ -1,12 +1,14 @@
 <h3>
-    送信しました
+    送信しますか？
 </h3>
 
-<p>
-  <strong>Text:</strong>
-  <%= @vlog.text %>
-</p>
+<table class="table table-hover">
+  <tr>
+  <th class="cal-lg-1">名前</th><th class="cal-lg-3">image</th><th class="cal-lg-5">内容</th>
+  </tr>
+  <tr>
+  <td class="cal-lg-1"><%= current_user.nickname %></td><td class="cal-lg-3"><%= @vlog.image %></td><td class="cal-lg-5"><%= @vlog.text %></td>
+  </tr>
+</table>
 
-<%= link_to '訂正する', "/blog/#{@vlog.id}/edit", method: :get %> |
-<%= link_to '削除する', "/blog/#{@vlog.id}", method: :delete %> |
-<%= link_to 'フォームに戻る', blog_index_path %>
+<%= render :partial => "footer" %>

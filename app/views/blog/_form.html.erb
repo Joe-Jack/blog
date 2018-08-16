@@ -1,4 +1,4 @@
-<%= form_for(@vlog) do |f| %>
+<%= form_for @vlog do |f| %>
   
   <div class="field">
   <%= f.label :name, "名前" %><br>
@@ -8,7 +8,7 @@
   <%= f.label :text, "内容" %><br>
   <%= f.text_area :text, placeholder: 'コメント' %>
   </div>
-  <div class="actions">
+  <div class="actions" >
   <%= f.submit "送信する" %>
   </div>
 <% end %>

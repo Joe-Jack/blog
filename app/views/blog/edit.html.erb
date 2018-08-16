@@ -1,19 +1,23 @@
-<h3>
+<%= render :partial => 'navbar' %>
+<div class="name">
+  <h3>
     編集してください
-</h3>
+  </h3>
+</div>
 
+  
 <%= form_for @vlog, :url => {:action => 'update'} do |f| %>
   
   <div class="field">
-  <%= f.label :name, "名前" %><br>
-  <%= f.text_field :name, placeholder: '山田太郎' %>
+  <%= f.label :image, "写真" %><br>
+  <%= f.text_field :image, class: "well well-sm" %>
   </div>
   <div class="content">
   <%= f.label :text, "内容" %><br>
-  <%= f.text_area :text, placeholder: 'コメント' %>
+  <%= f.text_area :text, placeholder: 'コメント', class:"well well-lg" %>
   </div>
   <div class="actions">
-  <%= f.submit "送信する" %>
+  <%= f.submit "訂正する" %>
   </div>
 <% end %>
 

@@ -1,0 +1,20 @@
+<%= render :partial => 'navbar' %>
+
+<div class="name">
+<h3><%= @nickname %>さんの投稿一覧</h3>
+</div>
+  <% @vlogs.each do |vlog| %>
+    <div class="panel panel-default">
+    <div class="panel-heading">
+      <div class="col-lg-1">
+      <%= @nickname %>
+      </div>
+      <%= link_to '編集する', "/blog/#{vlog.id}/edit", method: :get, class:"col-lg-offset-8" %> 
+      <%= link_to '削除する', "/blog/#{vlog.id}", method: :delete, class:"col-lg-offset-1" %> 
+      
+      
+    </div>
+    <div class="panel-body"><%= vlog.text %></div>
+    </div>      
+  <% end %>
+  <%= paginate(@vlogs) %>

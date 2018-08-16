@@ -1,0 +1,35 @@
+<!--<div class="companyname">-->
+<!--    <div class="container">-->
+<!--    <p>rudus</p>-->
+<!--    </div>-->
+<!--</div>-->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gnavi">
+          <span class="sr-only">メニュー</span>
+          <span class="icon-bar">signin</span>
+          <span class="icon-bar">login</span>
+        </button>
+      </div>
+        <a href= '/blog' class="navbar-brand">rudusブログ</a>
+      <div id="gnavi" class="collapse navbar-collapse">
+        <% if user_signed_in? %>
+          <div class="pad-top">
+          <ul class="nav navbar-nav navbar-right">
+              <%= link_to "マイページ", '/users/:id', method: :get %>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+              <a class="post" href="/blog/new">投稿する</a>
+          </ul>
+          </div>
+        <% else %>
+          <ul class="nav navbar-nav navbar-right">
+            <%= link_to "ログイン", '/users/sign_in', method: :get %>
+            <%= link_to "新規登録", new_user_registration_path, method: :get %>
+          </ul>
+        <% end %>
+      </div>
+      
+    </div>
+</nav>

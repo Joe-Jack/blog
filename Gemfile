@@ -45,3 +45,8 @@ group :development do
   gem 'spring'
 end
 
+gem 'bootstrap-sass'
+gem 'device'
+gem 'kaminari'
+gem 'devise'
+gem 'devise-bootstrap-views'

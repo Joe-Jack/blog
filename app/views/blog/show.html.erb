@@ -1,2 +1,10 @@
+<%= render :partial => 'navbar' %>
 
-    <%= @vlog.text %>
+<div class="name">
+    <h3>詳細情報</h3>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><%= @user.nickname %></div>
+    <div class="panel-body"><%= @vlog.text %></div>
+</div>      
+<%= link_to "戻る", blog_index_path, class:"btn btn-primary pull-right" %>
