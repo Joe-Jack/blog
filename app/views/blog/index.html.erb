@@ -6,7 +6,7 @@
 </h3>
 </div>
 
-<% @vlogs.each do |v| %>
+<% @vlogs.each_with_index do |v, index| %>
   <div class="panel panel-default">
     <div id="pad", class="panel-heading">
       <span class="text-right col-lg-1">名前：</span>
@@ -21,7 +21,7 @@
      
       <span class="text-right col-lg-1">写真：</span>
         <% if v.image.present? %>
-　　      <span class="col-lg-1 trigger"><%= image_tag v.image.thumb.url %></span>
+　　      <span class="col-lg-1 trigger", id="num<%= index %>"><%= image_tag v.image.thumb.url %></span>
 　      <% else %>
 　　      <span class="col-lg-1"><%= image_tag 'noimage' %></span>
 　      <% end %>
@@ -30,7 +30,7 @@
     </div>
     <div class="panel-body"><%= v.text %></div>
     <% if v.image.present? %>
-      <div class="panel-body"><span class="pimage"><%= image_tag v.image.to_s %></span></div>
+      <div class="panel-body"><span class="pimage", id="number<%= index %>"><%= image_tag v.image.to_s %></span></div>
     <% end %>
   </div>
 <% end %>
