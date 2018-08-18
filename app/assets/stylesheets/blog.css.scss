@@ -30,6 +30,15 @@ nav.navbar.navbar-default.navbar-fixed-top {
     background: white;
     
 }
-.container-color {
-    background: linear-gradient(to bottom left, #FFF, #FFC778);
+
+#pad {
+    padding:5px;
+    height:50px;
+ }
+.pimage {
+    display: none;
+    cursor: pointer;
+}
+.col-lg-1.trigger {
+    cursor: pointer;
 }

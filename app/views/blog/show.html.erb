@@ -5,6 +5,11 @@
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><%= @user.nickname %></div>
-    <div class="panel-body"><%= @vlog.text %></div>
+    <div class="panel-body">
+        <%= @vlog.text %>
+    </div>
+    <div class="panel-body">    
+        <%= image_tag @vlog.image.to_s %>
+    </div>
 </div>      
 <%= link_to "戻る", blog_index_path, class:"btn btn-primary pull-right" %>

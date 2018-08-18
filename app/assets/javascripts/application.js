@@ -15,8 +15,3 @@
 //= require turbolinks
 //= require_tree .
 
-$(functiuon(){
-    $('.modal').click(function(){
-        $('#modal').fadeIn();
-    })
-});

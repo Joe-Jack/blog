@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20180812001355) do
     t.string  "name",    limit: 255
     t.text    "text",    limit: 65535
     t.integer "user_id", limit: 4
+    t.text    "image",   limit: 65535, null: false
   end
 
 end

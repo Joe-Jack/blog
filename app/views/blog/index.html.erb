@@ -6,9 +6,9 @@
 </h3>
 </div>
 
-<% @vlog.each do |v| %>
+<% @vlogs.each do |v| %>
   <div class="panel panel-default">
-    <div class="panel-heading">
+    <div id="pad", class="panel-heading">
       <span class="text-right col-lg-1">名前：</span>
      
       <% if v.name.present? %>
@@ -20,15 +20,21 @@
       <% end %>
      
       <span class="text-right col-lg-1">写真：</span>
-      <span class="text-left col-lg-2"><a href="#"><%= v.image %></a></span>
-      <span class="col-lg-offset-6"><%= link_to "詳細", blog_path(v.id) %></span>
+        <% if v.image.present? %>
+　　      <span class="col-lg-1 trigger"><%= image_tag v.image.thumb.url %></span>
+　      <% else %>
+　　      <span class="col-lg-1"><%= image_tag 'noimage' %></span>
+　      <% end %>
+     
+      <span class="col-lg-offset-7"><%= link_to "詳細", blog_path(v.id) %></span>
     </div>
     <div class="panel-body"><%= v.text %></div>
+    <% if v.image.present? %>
+      <div class="panel-body"><span class="pimage"><%= image_tag v.image.to_s %></span></div>
+    <% end %>
   </div>
 <% end %>
 
-<%= paginate(@vlog) %>
-
-
+<%= paginate(@vlogs) %>
 
 <%= link_to "戻る", "/blog", class:"btn btn-primary pull-right" %>
