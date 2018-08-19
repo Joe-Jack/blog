@@ -56,3 +56,4 @@ gem 'rmagick'
 gem 'jquery-turbolinks'
 
 gem 'qiita-markdown'
+gem 'github-linguist'

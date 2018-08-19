@@ -28,7 +28,13 @@
      
       <span class="col-lg-offset-7"><%= link_to "詳細", blog_path(v.id) %></span>
     </div>
-    <div class="panel-body"><%= v.text %></div>
+    <% if qiita_markdown(v.text).present? %>
+      <div class="panel-body"><%= qiita_markdown(v.text) %></div>
+    <% elsif v.text.present? %>
+      <div class="panel-body"><%= v.text %></div>
+    <% else %>
+      <div class="panel-body">notext</div>
+    <% end %>  
     <% if v.image.present? %>
       <div class="panel-body"><span class="pimage", id="number<%= index %>"><%= image_tag v.image.to_s %></span></div>
     <% end %>
