@@ -52,4 +52,7 @@ gem 'devise'
 gem 'devise-bootstrap-views'
 gem 'carrierwave'
 gem 'rmagick'
+
 gem 'jquery-turbolinks'
+
+gem 'qiita-markdown'
